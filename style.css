@@ -1,10 +1,13 @@
+/* Base styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background: #f0f4f8;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
+/* Centered welcome box */
 .center-box {
   text-align: center;
   margin-top: 15vh;
@@ -13,22 +16,43 @@ body {
 .center-box h1 {
   font-size: 2.5em;
   color: #003366;
+  margin-bottom: 10px;
 }
 
 .center-box p {
   font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
+/* Button styling */
 .btn {
-  background: #0057a0;
+  display: inline-block;
+  background-color: #007bff;
   color: white;
   padding: 0.8em 1.5em;
   text-decoration: none;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   margin-top: 20px;
-  display: inline-block;
 }
 
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Additional button for report */
+.report-toggle-btn {
+  background-color: #ff5722;
+  margin-left: 10px;
+}
+
+.report-toggle-btn:hover {
+  background-color: #e64a19;
+}
+
+/* Class selection page */
 .class-selection {
   text-align: center;
   padding: 2em;
@@ -54,6 +78,7 @@ body {
   color: #0077cc;
 }
 
+/* Q&A page layout */
 .qa-page {
   max-width: 800px;
   margin: 2em auto;
@@ -71,4 +96,98 @@ body {
 .qa-page h3 {
   color: #0077cc;
   margin-top: 1.5em;
+}
+
+/* Report section */
+.report-section {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none; /* initially hidden */
+}
+
+.report-section h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.report-section label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.report-section input[type="email"],
+.report-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.report-section textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.report-btn {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #28a745;
+}
+
+.report-btn:hover {
+  background-color: #218838;
+}
+@media (max-width: 768px) {
+  .center-box h1 {
+    font-size: 1.8em;
+  }
+
+  .center-box p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .btn {
+    width: 90%;
+    font-size: 1em;
+    padding: 0.7em 1em;
+    margin: 10px auto;
+  }
+
+  .report-toggle-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .report-section {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .qa-page {
+    width: 95%;
+    padding: 1em;
+  }
+
+  .class-selection a {
+    font-size: 1.2em;
+  }
+
+  .report-section input[type="email"],
+  .report-section textarea {
+    font-size: 0.95em;
+  }
+
+  .report-btn {
+    font-size: 1em;
+  }
 }
