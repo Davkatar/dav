@@ -103,21 +103,21 @@
  <script>
   const chapters = {
     Science: [
-      "Chapter 1: ",
-      "Chapter 2: ",
-      "Chapter 3: ",
-      "Chapter 4: ",
-      "Chapter 5: ",
-      "Chapter 6: ",
-      "Chapter 7: ",
-      "Chapter 8: ",
-      "Chapter 9: ",
-      "Chapter 10:"
+      { title: "Chapter 1", link: "https://drive.google.com/file/d/1H_hSJZSMZ8dJnHGR-c-VDlEpSuT0ZNVV/view?usp=drive_link" },
+      { title: "Chapter 2", link: "https://drive.google.com/file/d/1-1ofgnFSJJJyEu9CD9Rz9B2X7xsoIRGN/view?usp=drive_link" },
+      { title: "Chapter 3", link: "https://drive.google.com/file/d/1-1j1NsUC4C9XUFZldRHW3rBUKetZjpkH/view?usp=drive_link" },
+      { title: "Chapter 4" },
+      { title: "Chapter 5" },
+      { title: "Chapter 6" },
+      { title: "Chapter 7" },
+      { title: "Chapter 8" },
+      { title: "Chapter 9" },
+      { title: "Chapter 10" }
     ],
     "Social Science": [
-      "Chapter 1: ",
-      "Chapter 2: ",
-      "Chapter 3: "
+      { title: "Chapter 1" },
+      { title: "Chapter 2" },
+      { title: "Chapter 3" }
     ]
   };
 
@@ -130,15 +130,14 @@
       const li = document.createElement("li");
       const a = document.createElement("a");
 
-      // Custom link for Science Chapter 1
-      if (subject === "Science" && index === 0) {
-        a.href = "#";
+      if (chapter.link) {
+        a.href = chapter.link;
       } else {
         const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
         a.href = fileName;
       }
 
-      a.textContent = chapter;
+      a.textContent = chapter.title;
       a.target = "_blank"; // Open in new tab
 
       li.appendChild(a);
@@ -152,6 +151,7 @@
     document.getElementById("chapterPanel").classList.remove("open");
   }
 </script>
+
 
 </body>
 </html>
