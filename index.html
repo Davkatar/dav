@@ -2,14 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome - School Q&A</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="center-box">
     <h1>Welcome to the School Q&A Portal</h1>
-    <p>Explore questions and answers for classes 3 to 10</p>
+    <p>Explore questions and answers for classes 3 to 8</p>
     <a href="class-selection.html" class="btn">Start Now</a>
+    <button class="btn report-toggle-btn" onclick="toggleReport()">Report an Issue</button>
   </div>
+
+  <div class="report-section" id="reportSection">
+    <h2>Report an Issue</h2>
+    <form action="#" method="post">
+      <label for="report-email">Your Email (optional):</label>
+      <input type="email" id="report-email" name="email" placeholder="you@example.com" />
+
+      <label for="report-message">Message:</label>
+      <textarea id="report-message" name="message" placeholder="Describe the issue or suggestion..." required></textarea>
+
+      <button type="submit" class="btn report-btn">Submit Report</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleReport() {
+      const section = document.getElementById('reportSection');
+      section.style.display = 'block';
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
+    
