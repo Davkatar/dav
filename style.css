@@ -11,6 +11,7 @@ body {
 .center-box {
   text-align: center;
   margin-top: 15vh;
+  padding: 0 1em;
 }
 
 .center-box h1 {
@@ -35,7 +36,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .btn:hover {
@@ -106,7 +107,7 @@ body {
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: none; /* initially hidden */
+  display: none;
 }
 
 .report-section h2 {
@@ -146,6 +147,8 @@ body {
 .report-btn:hover {
   background-color: #218838;
 }
+
+/* Responsive styles */
 @media (max-width: 768px) {
   .center-box h1 {
     font-size: 1.8em;
