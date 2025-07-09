@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Select Your Subject</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -42,7 +41,6 @@
       color: #0056b3;
     }
 
-    /* Slide Panel */
     .slide-panel {
       position: fixed;
       top: 0;
@@ -82,6 +80,7 @@
   </style>
 </head>
 <body>
+
   <div class="class-selection">
     <h2>Select Your Subject</h2>
     <ul>
@@ -95,82 +94,78 @@
   <div id="chapterPanel" class="slide-panel">
     <div class="close-btn" onclick="closePanel()">✖</div>
     <h3 id="subjectTitle">Subject</h3>
-    <ul class="chapter-list" id="chapterList">
-      <!-- Chapters will be injected here -->
-    </ul>
+    <ul class="chapter-list" id="chapterList"></ul>
   </div>
 
- <script>
-  const chapters = {
-   "Science": [
-      { title: "Chapter 1", link: "https://drive.google.com/file/d/1H_hSJZSMZ8dJnHGR-c-VDlEpSuT0ZNVV/view?usp=drive_link" },
-      { title: "Chapter 2", link: "https://drive.google.com/file/d/1-1ofgnFSJJJyEu9CD9Rz9B2X7xsoIRGN/view?usp=drive_link" },
-      { title: "Chapter 3", link: "https://drive.google.com/file/d/1-1j1NsUC4C9XUFZldRHW3rBUKetZjpkH/view?usp=drive_link" },
-      { title: "Chapter 4", link: "https://drive.google.com/file/d/1-9L3QY5x2KBVRosfmehNXJLc_wpf66ds/view?usp=drive_link" },
-      { title: "Chapter 5", link: },
-      { title: "Chapter 6", link:},
-      { title: "Chapter 7", link:},
-      { title: "Chapter 8", link:},
-      { title: "Chapter 9", link:},
-      { title: "Chapter 10",link: }
-    ],
-   "Social Science": [
-  { "title": "Ch 1 - Geography", "link": "#" },
-  { "title": "Ch 2 - Geography", "link": "#" },
-  { "title": "Ch 3 - Geography", "link": "#" },
-  { "title": "Ch 4 - Geography", "link": "#" },
-  { "title": "Ch 5 - Geography", "link": "#" },
-  { "title": "Ch 6 - Geography", "link": "#" },
-  { "title": "Ch 7 - Geography", "link": "#" },
-  { "title": "Ch 8 - History", "link": "#" },
-  { "title": "Ch 9 - History", "link": "#" },
-  { "title": "Ch 10 - History", "link": "#" },
-  { "title": "Ch 11 - History", "link": "#" },
-  { "title": "Ch 12 - History", "link": "#" },
-  { "title": "Ch 13 - History", "link": "#" },
-  { "title": "Ch 14 - History", "link": "#" },
-  { "title": "Ch 15 - History", "link": "#" },
-  { "title": "Ch 16 - Civics", "link": "#" },
-  { "title": "Ch 17 - Civics", "link": "#" },
-  { "title": "Ch 18 - Civics", "link": "#" },
-  { "title": "Ch 19 - Civics", "link": "#" },
-  { "title": "Ch 20 - Civics", "link": "#" },
-  { "title": "Ch 21 - Civics", "link": "#" }
-]
+  <script>
+    const chapters = {
+      "Science": [
+        { title: "Chapter 1", link: "https://drive.google.com/file/d/1H_hSJZSMZ8dJnHGR-c-VDlEpSuT0ZNVV/view?usp=drive_link" },
+        { title: "Chapter 2", link: "https://drive.google.com/file/d/1-1ofgnFSJJJyEu9CD9Rz9B2X7xsoIRGN/view?usp=drive_link" },
+        { title: "Chapter 3", link: "https://drive.google.com/file/d/1-1j1NsUC4C9XUFZldRHW3rBUKetZjpkH/view?usp=drive_link" },
+        { title: "Chapter 4", link: "https://drive.google.com/file/d/1-9L3QY5x2KBVRosfmehNXJLc_wpf66ds/view?usp=drive_link" },
+        { title: "Chapter 5", link: "" },
+        { title: "Chapter 6", link: "" },
+        { title: "Chapter 7", link: "" },
+        { title: "Chapter 8", link: "" },
+        { title: "Chapter 9", link: "" },
+        { title: "Chapter 10", link: "" }
+      ],
+      "Social Science": [
+        { title: "Ch 1 - Geography", link: "#" },
+        { title: "Ch 2 - Geography", link: "#" },
+        { title: "Ch 3 - Geography", link: "#" },
+        { title: "Ch 4 - Geography", link: "#" },
+        { title: "Ch 5 - Geography", link: "#" },
+        { title: "Ch 6 - Geography", link: "#" },
+        { title: "Ch 7 - Geography", link: "#" },
+        { title: "Ch 8 - History", link: "#" },
+        { title: "Ch 9 - History", link: "#" },
+        { title: "Ch 10 - History", link: "#" },
+        { title: "Ch 11 - History", link: "#" },
+        { title: "Ch 12 - History", link: "#" },
+        { title: "Ch 13 - History", link: "#" },
+        { title: "Ch 14 - History", link: "#" },
+        { title: "Ch 15 - History", link: "#" },
+        { title: "Ch 16 - Civics", link: "#" },
+        { title: "Ch 17 - Civics", link: "#" },
+        { title: "Ch 18 - Civics", link: "#" },
+        { title: "Ch 19 - Civics", link: "#" },
+        { title: "Ch 20 - Civics", link: "#" },
+        { title: "Ch 21 - Civics", link: "#" }
+      ]
+    };
 
-  };
+    function openPanel(subject) {
+      document.getElementById("subjectTitle").textContent = subject;
+      const list = document.getElementById("chapterList");
+      list.innerHTML = "";
 
-  function openPanel(subject) {
-    document.getElementById("subjectTitle").textContent = subject;
-    const list = document.getElementById("chapterList");
-    list.innerHTML = ""; // Clear previous content
+      chapters[subject].forEach((chapter, index) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
 
-    chapters[subject].forEach((chapter, index) => {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
+        let cleanLink = chapter.link?.trim();
+        if (cleanLink) {
+          a.href = cleanLink;
+        } else {
+          const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
+          a.href = fileName;
+        }
 
-      if (chapter.link) {
-        a.href = chapter.link;
-      } else {
-        const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
-        a.href = fileName;
-      }
+        a.textContent = chapter.title;
+        a.target = "_blank";
+        li.appendChild(a);
+        list.appendChild(li);
+      });
 
-      a.textContent = chapter.title;
-      a.target = "_blank"; // Open in new tab
+      document.getElementById("chapterPanel").classList.add("open");
+    }
 
-      li.appendChild(a);
-      list.appendChild(li);
-    });
-
-    document.getElementById("chapterPanel").classList.add("open");
-  }
-
-  function closePanel() {
-    document.getElementById("chapterPanel").classList.remove("open");
-  }
-</script>
-
+    function closePanel() {
+      document.getElementById("chapterPanel").classList.remove("open");
+    }
+  </script>
 
 </body>
 </html>
