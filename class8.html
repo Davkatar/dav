@@ -2,30 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Select Your Subject</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-      margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 50px;
     }
 
     .class-selection {
       background: white;
-      padding: 40px;
-      margin: 100px auto;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .class-selection h2 {
-      margin-bottom: 30px;
-      color: #343a40;
+      padding: 30px;
+      margin: auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     ul {
@@ -34,15 +27,14 @@
     }
 
     li {
-      margin: 20px 0;
+      margin: 15px 0;
     }
 
     a {
       text-decoration: none;
-      color: #007bff;
-      font-size: 20px;
-      font-weight: 500;
-      transition: color 0.3s;
+      color: #007BFF;
+      font-size: 18px;
+      cursor: pointer;
     }
 
     a:hover {
@@ -52,16 +44,16 @@
     .slide-panel {
       position: fixed;
       top: 0;
-      right: -100%;
+      right: -400px;
       width: 300px;
       height: 100%;
-      background-color: #ffffff;
-      box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
-      padding: 25px;
+      background-color: #fff;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
       overflow-y: auto;
-      transition: right 0.4s ease;
+      transition: right 0.3s ease;
       text-align: left;
-      z-index: 999;
+      z-index: 1000;
     }
 
     .slide-panel.open {
@@ -70,49 +62,20 @@
 
     .slide-panel h3 {
       margin-top: 0;
-      font-size: 22px;
-      color: #212529;
-      border-bottom: 1px solid #dee2e6;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      font-size: 20px;
+      color: #333;
     }
 
     .close-btn {
       text-align: right;
-      font-size: 22px;
-      font-weight: bold;
-      color: #dc3545;
       cursor: pointer;
-      margin-bottom: 10px;
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
     }
 
     .chapter-list li {
-      margin: 10px 0;
-    }
-
-    .chapter-list a {
-      display: inline-block;
-      padding: 8px 12px;
-      background-color: #e9ecef;
-      border-radius: 8px;
-      transition: background-color 0.3s, color 0.3s;
-      color: #333;
-    }
-
-    .chapter-list a:hover {
-      background-color: #007bff;
-      color: #fff;
-    }
-
-    @media screen and (max-width: 500px) {
-      .class-selection {
-        margin-top: 60px;
-        padding: 30px 20px;
-      }
-
-      .slide-panel {
-        width: 100%;
-      }
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -127,6 +90,7 @@
     </ul>
   </div>
 
+  <!-- Slide Panel -->
   <div id="chapterPanel" class="slide-panel">
     <div class="close-btn" onclick="closePanel()">✖</div>
     <h3 id="subjectTitle">Subject</h3>
@@ -157,10 +121,29 @@
         { title: "Chapter 19", link: "https://drive.google.com/file/d/104gJgXGrrKlIhwR9At4dUez7HqQV2Pte/view?usp=sharing" },
         { title: "Chapter 20", link: "https://drive.google.com/file/d/105V-z72FtU57pQX24GAC54Xx43nbvK0D/view?usp=drive_link" }
       ],
-      "Social Science": Array.from({length: 21}, (_, i) => ({
-        title: `Ch ${i + 1} - ${i < 7 ? "Geography" : i < 15 ? "History" : "Civics"}`,
-        link: "#"
-      }))
+      "Social Science": [
+        { title: "Ch 1 - Geography", link: "#" },
+        { title: "Ch 2 - Geography", link: "#" },
+        { title: "Ch 3 - Geography", link: "#" },
+        { title: "Ch 4 - Geography", link: "#" },
+        { title: "Ch 5 - Geography", link: "#" },
+        { title: "Ch 6 - Geography", link: "#" },
+        { title: "Ch 7 - Geography", link: "#" },
+        { title: "Ch 8 - History", link: "#" },
+        { title: "Ch 9 - History", link: "#" },
+        { title: "Ch 10 - History", link: "#" },
+        { title: "Ch 11 - History", link: "#" },
+        { title: "Ch 12 - History", link: "#" },
+        { title: "Ch 13 - History", link: "#" },
+        { title: "Ch 14 - History", link: "#" },
+        { title: "Ch 15 - History", link: "#" },
+        { title: "Ch 16 - Civics", link: "#" },
+        { title: "Ch 17 - Civics", link: "#" },
+        { title: "Ch 18 - Civics", link: "#" },
+        { title: "Ch 19 - Civics", link: "#" },
+        { title: "Ch 20 - Civics", link: "#" },
+        { title: "Ch 21 - Civics", link: "#" }
+      ]
     };
 
     function openPanel(subject) {
@@ -173,10 +156,10 @@
         const a = document.createElement("a");
 
         let cleanLink = chapter.link?.trim();
-        if (cleanLink && cleanLink !== "#") {
+        if (cleanLink) {
           a.href = cleanLink;
         } else {
-          const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
+          const fileName = ${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html;
           a.href = fileName;
         }
 
