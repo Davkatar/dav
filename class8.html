@@ -2,60 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Select Your Subject</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #74ebd5, #ACB6E5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 50px;
     }
 
     .class-selection {
-      background-color: white;
-      padding: 40px 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      max-width: 350px;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    h2 {
-      color: #333;
-      margin-bottom: 30px;
+      background: white;
+      padding: 30px;
+      margin: auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     ul {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
 
     li {
-      margin: 20px 0;
+      margin: 15px 0;
     }
 
-    .btn {
-      background-color: #007BFF;
-      color: white;
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    a {
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      color: #007BFF;
+      font-size: 18px;
+      cursor: pointer;
     }
 
-    .btn:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
+    a:hover {
+      color: #0056b3;
     }
 
     .slide-panel {
@@ -64,15 +47,13 @@
       right: -400px;
       width: 300px;
       height: 100%;
-      background-color: #ffffff;
-      box-shadow: -4px 0 25px rgba(0, 0, 0, 0.3);
-      padding: 25px 20px;
+      background-color: #fff;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
       overflow-y: auto;
-      transition: right 0.4s ease;
+      transition: right 0.3s ease;
       text-align: left;
       z-index: 1000;
-      border-top-left-radius: 12px;
-      border-bottom-left-radius: 12px;
     }
 
     .slide-panel.open {
@@ -81,48 +62,20 @@
 
     .slide-panel h3 {
       margin-top: 0;
-      color: #007BFF;
+      font-size: 20px;
+      color: #333;
     }
 
     .close-btn {
       text-align: right;
-      font-size: 22px;
       cursor: pointer;
       color: red;
+      font-size: 18px;
+      font-weight: bold;
     }
 
     .chapter-list li {
-      margin-bottom: 12px;
-    }
-
-    .chapter-list a {
-      text-decoration: none;
-      color: #333;
-      background: #f0f0f0;
-      padding: 10px 15px;
-      display: block;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-    }
-
-    .chapter-list a:hover {
-      background-color: #e2e2e2;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 500px) {
-      .class-selection {
-        width: 90%;
-        padding: 30px 20px;
-      }
-
-      .slide-panel {
-        width: 90%;
-      }
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -131,12 +84,13 @@
   <div class="class-selection">
     <h2>Select Your Subject</h2>
     <ul>
-      <li><a class="btn" onclick="openPanel('Science')">Science</a></li>
-      <li><a class="btn" onclick="openPanel('Social Science')">Social Science</a></li>
-      <li><a class="btn" href="class-selection.html">Back</a></li>
+      <li><a onclick="openPanel('Science')"><strong>Science</strong></a></li>
+      <li><a onclick="openPanel('Social Science')"><strong>Social Science</strong></a></li>
+      <li><a href="class-selection.html"><strong>Back</strong></a></li>
     </ul>
   </div>
 
+  <!-- Slide Panel -->
   <div id="chapterPanel" class="slide-panel">
     <div class="close-btn" onclick="closePanel()">✖</div>
     <h3 id="subjectTitle">Subject</h3>
@@ -154,7 +108,7 @@
         { title: "Chapter 6", link: "https://drive.google.com/file/d/1-Ac-mWqQIbx5X-ZsDZ4WybUqXQl5XHHH/view?usp=sharing" },
         { title: "Chapter 7", link: "https://drive.google.com/file/d/1-C6eoCOFW7QL2MBeGbR0REawOUWgEwJ6/view?usp=sharing" },
         { title: "Chapter 8", link: "https://drive.google.com/file/d/1-DqgZ-48fCtdgBYYWA7bnCoZUTJ6yZgX/view?usp=sharing" },
-        { title: "Chapter 9", link: "" },
+        { title: "Chapter 9", link: "https://drive.google.com/file/d/1-DqgZ-48fCtdgBYYWA7bnCoZUTJ6yZgX/view?usp=sharing" },
         { title: "Chapter 10", link: "https://drive.google.com/file/d/1-IaEYeqzgj_4xI0551u-A7os1mmEEU7p/view?usp=drive_link" },
         { title: "Chapter 11", link: "https://drive.google.com/file/d/1-iLYeBDZHfiNq5DJnfszSAMkkeYFjQMI/view?usp=sharing" },
         { title: "Chapter 12", link: "https://drive.google.com/file/d/1-m50ZaoHTCQmU-_0ZqZP8jWXCiWMQMio/view?usp=sharing" },
@@ -201,11 +155,11 @@
         const li = document.createElement("li");
         const a = document.createElement("a");
 
-        const cleanLink = chapter.link?.trim();
+        let cleanLink = chapter.link?.trim();
         if (cleanLink) {
           a.href = cleanLink;
         } else {
-          const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
+          const fileName = ${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html;
           a.href = fileName;
         }
 
