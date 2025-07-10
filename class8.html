@@ -146,31 +146,32 @@
       ]
     };
 
-    function openPanel(subject) {
-      document.getElementById("subjectTitle").textContent = subject;
-      const list = document.getElementById("chapterList");
-      list.innerHTML = "";
+   function openPanel(subject) {
+  document.getElementById("subjectTitle").textContent = subject;
+  const list = document.getElementById("chapterList");
+  list.innerHTML = "";
 
-      chapters[subject].forEach((chapter, index) => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
+  chapters[subject].forEach((chapter, index) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
 
-        let cleanLink = chapter.link?.trim();
-        if (cleanLink) {
-          a.href = cleanLink;
-        } else {
-          const fileName = ${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html;
-          a.href = fileName;
-        }
-
-        a.textContent = chapter.title;
-        a.target = "_blank";
-        li.appendChild(a);
-        list.appendChild(li);
-      });
-
-      document.getElementById("chapterPanel").classList.add("open");
+    let cleanLink = chapter.link?.trim();
+    if (cleanLink) {
+      a.href = cleanLink;
+    } else {
+      const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
+      a.href = fileName;
     }
+
+    a.textContent = chapter.title;
+    a.target = "_blank";
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+
+  document.getElementById("chapterPanel").classList.add("open");
+}
+
 
     function closePanel() {
       document.getElementById("chapterPanel").classList.remove("open");
