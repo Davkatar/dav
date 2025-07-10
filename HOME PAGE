@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DAV KATAR Homepage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Welcome to DAV KATAR Question and Answer in the PORTAL All Notes Of Class 3to8 are Available</h1>
-  <p>Built with GitHub Pages!</p>
+<body class="bg-gradient-to-br from-blue-100 via-white to-pink-100 min-h-screen flex items-center justify-center font-sans text-gray-800">
+
+  <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-xl text-center border border-blue-200">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-blue-700 mb-4">
+      Welcome to <span class="text-red-600">DAV KATAR</span> Portal
+    </h1>
+    <p class="text-lg text-gray-700 mb-6">
+      📚 All Notes & Q&A for Classes <strong>3 to 8</strong> are available here.<br>
+      Get easy access to study materials and answers!
+    </p>
+    <a href="https://davkatar.github.io" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow hover:bg-blue-800 transition duration-300">
+      Visit Main Portal
+    </a>
+    <p class="mt-6 text-sm text-gray-500">✨ Built with GitHub Pages</p>
+  </div>
+
 </body>
 </html>
