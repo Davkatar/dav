@@ -9,14 +9,14 @@
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
       text-align: center;
-      padding: 50px;
+      padding: 30px 20px;
     }
 
     .class-selection {
       background: white;
-      padding: 30px;
+      padding: 20px;
       margin: auto;
-      width: 300px;
+      max-width: 400px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
@@ -24,6 +24,7 @@
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     li {
@@ -33,7 +34,7 @@
     a {
       text-decoration: none;
       color: #007BFF;
-      font-size: 18px;
+      font-size: 1.2rem;
       cursor: pointer;
     }
 
@@ -44,8 +45,9 @@
     .slide-panel {
       position: fixed;
       top: 0;
-      right: -400px;
-      width: 300px;
+      right: -100%;
+      width: 90%;
+      max-width: 350px;
       height: 100%;
       background-color: #fff;
       box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
@@ -62,7 +64,7 @@
 
     .slide-panel h3 {
       margin-top: 0;
-      font-size: 20px;
+      font-size: 1.3rem;
       color: #333;
     }
 
@@ -70,12 +72,34 @@
       text-align: right;
       cursor: pointer;
       color: red;
-      font-size: 18px;
+      font-size: 1.2rem;
       font-weight: bold;
     }
 
     .chapter-list li {
       margin-bottom: 10px;
+    }
+
+    .chapter-list a {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      a {
+        font-size: 1.3rem;
+      }
+
+      .slide-panel {
+        width: 300px;
+      }
+
+      .slide-panel h3 {
+        font-size: 1.5rem;
+      }
+
+      .chapter-list a {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -146,32 +170,31 @@
       ]
     };
 
-   function openPanel(subject) {
-  document.getElementById("subjectTitle").textContent = subject;
-  const list = document.getElementById("chapterList");
-  list.innerHTML = "";
+    function openPanel(subject) {
+      document.getElementById("subjectTitle").textContent = subject;
+      const list = document.getElementById("chapterList");
+      list.innerHTML = "";
 
-  chapters[subject].forEach((chapter, index) => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
+      chapters[subject].forEach((chapter, index) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
 
-    let cleanLink = chapter.link?.trim();
-    if (cleanLink) {
-      a.href = cleanLink;
-    } else {
-      const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
-      a.href = fileName;
+        let cleanLink = chapter.link?.trim();
+        if (cleanLink) {
+          a.href = cleanLink;
+        } else {
+          const fileName = `${subject.toLowerCase().replace(/\s+/g, '-')}-ch${index + 1}.html`;
+          a.href = fileName;
+        }
+
+        a.textContent = chapter.title;
+        a.target = "_blank";
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+
+      document.getElementById("chapterPanel").classList.add("open");
     }
-
-    a.textContent = chapter.title;
-    a.target = "_blank";
-    li.appendChild(a);
-    list.appendChild(li);
-  });
-
-  document.getElementById("chapterPanel").classList.add("open");
-}
-
 
     function closePanel() {
       document.getElementById("chapterPanel").classList.remove("open");
