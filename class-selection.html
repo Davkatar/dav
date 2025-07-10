@@ -2,23 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Select Your Class</title>
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bgPulse {
+      0%, 100% {
+        background-position: left top;
+      }
+      50% {
+        background-position: right bottom;
+      }
+    }
+
+    .fade-slide {
+      animation: fadeSlide 0.8s ease-out forwards;
+    }
+
+    .pop-in {
+      animation: popIn 0.5s ease-out forwards;
+    }
+
+    .hover-glow:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(0, 140, 255, 0.4);
+    }
+
+    body {
+      background: linear-gradient(135deg, #fefcbf, #bfdbfe);
+      background-size: 400% 400%;
+      animation: bgPulse 12s ease infinite;
+    }
+  </style>
 </head>
-<body>
-  <div class="class-selection">
-    <h2>Select Your Class</h2>
-    <ul>
-      <li><a href="class3.html">Class <strong>3</strong></a></li>
-      <li><a href="class4.html">Class <strong>4</strong></a></li>
-      <li><a href="class5.html">Class <strong>5</strong></a></li>
-      <li><a href="class6.html">Class <strong>6</strong></a></li>
-      <li><a href="class7.html">Class <strong>7</strong></a></li>
-      <li><a href="class8.html">Class <strong>8</strong></a></li>
-        <li><a href="index.html"><strong>Back</strong></a></li>
-        
+<body class="min-h-screen flex items-center justify-center font-sans text-gray-800">
+
+  <div class="bg-white bg-opacity-90 p-10 rounded-3xl shadow-2xl max-w-md w-full border-4 border-blue-300 fade-slide">
+    <h2 class="text-4xl font-bold text-yellow-600 mb-10 text-center animate-bounce">🎓 Select Your Class</h2>
+    <ul class="space-y-5 text-center">
+      <li class="pop-in animate-pulse delay-100">
+        <a href="class3.html" class="block py-3 px-6 bg-blue-100 text-blue-800 text-xl font-bold rounded-2xl shadow-md hover-glow transition duration-300">📘 Class 3</a>
+      </li>
+      <li class="pop-in animate-pulse delay-200">
+        <a href="class4.html" class="block py-3 px-6 bg-yellow-100 text-yellow-800 text-xl font-bold rounded-2xl shadow-md hover-glow transition duration-300">📗 Class 4</a>
+      </li>
+      <li class="pop-in animate-pulse delay-300">
+        <a href="class5.html" class="block py-3 px-6 bg-blue-100 text-blue-800 text-xl font-bold rounded-2xl shadow-md hover-glow transition duration-300">📕 Class 5</a>
+      </li>
+      <li class="pop-in animate-pulse delay-400">
+        <a href="class6.html" class="block py-3 px-6 bg-yellow-100 text-yellow-800 text-xl font-bold rounded-2xl shadow-md hover-glow transition duration-300">📙 Class 6</a>
+      </li>
+      <li class="pop-in animate-pulse delay-500">
+        <a href="class7.html" class="block py-3 px-6 bg-blue-100 text-blue-800 text-xl font-bold rounded-2xl shadow-md hover-glow transition duration-300">📒 Class 7</a>
+      </li>
+      <li class="pop-in animate-pulse delay-600">
+        <a href="class8.html" class="block py-3 px-6 bg-yellow-100 text-yellow-800 text-xl font-bold rounded-2xl shadow-md hover-glow transition duration-300">📓 Class 8</a>
+      </li>
+      <li class="mt-6 fade-slide">
+        <a href="index.html" class="inline-block mt-4 py-3 px-6 bg-gradient-to-r from-yellow-400 to-blue-500 text-white text-lg font-bold rounded-full shadow-lg hover:scale-110 hover:bg-blue-600 transition duration-300 animate-bounce">⬅ Back to Home</a>
+      </li>
     </ul>
   </div>
+
 </body>
 </html>
